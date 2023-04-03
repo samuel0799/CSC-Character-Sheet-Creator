@@ -1,4 +1,4 @@
-package com.csc.cscapi.rpg;
+package com.csc.cscapi.util.rpg;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

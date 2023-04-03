@@ -1,11 +1,13 @@
-package com.csc.cscapi.domain.services;
+package com.csc.cscapi.services;
+
+
 
 import jakarta.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.csc.cscapi.domain.model.Usuario;
-import com.csc.cscapi.domain.repository.UsuarioRepository;
+import com.csc.cscapi.entities.Usuario;
+import com.csc.cscapi.repositories.UsuarioRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -14,6 +16,12 @@ import lombok.AllArgsConstructor;
 public class UsuarioService {
 
     private UsuarioRepository usuarioRepository;
+
+
+    public Usuario buscar(Long clienteId){
+        return usuarioRepository.findById(clienteId)
+        .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+    }
 
     @Transactional
     public Usuario salvar(Usuario usuario){

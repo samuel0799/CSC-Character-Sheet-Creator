@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.csc.cscapi.domain.model.Usuario;
-import com.csc.cscapi.domain.repository.UsuarioRepository;
-import com.csc.cscapi.domain.services.UsuarioService;
+import com.csc.cscapi.entities.Usuario;
+import com.csc.cscapi.repositories.UsuarioRepository;
+import com.csc.cscapi.services.UsuarioService;
 
 import lombok.AllArgsConstructor;
 
@@ -40,8 +40,7 @@ public class UsuarioController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-
-    @PostMapping
+    @PostMapping("/cadastrar")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario addUsuario(@Valid @RequestBody Usuario usuario){
         return usuarioService.salvar(usuario);
