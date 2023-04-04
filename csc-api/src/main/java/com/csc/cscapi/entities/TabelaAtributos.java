@@ -36,27 +36,27 @@ public class TabelaAtributos {
 	  
     @NotNull
     @Column(name="atributo_forca_mod")
-    private int forcaMod;
+    private int forcaMod = (int) Math.ceil(forca / 2);
 	
     @NotNull
     @Column(name="atributo_destreza_mod")
-    private int destrezaMod;
+    private int destrezaMod = (int) Math.ceil(destreza / 2);
 	
     @NotNull
     @Column(name="atributo_constituicao_mod")
-    private int constituicaoMod;
+    private int constituicaoMod = (int) Math.ceil(constituicao / 2);
 	
     @NotNull
     @Column(name="atributo_inteligencia_mod")
-    private int inteligenciaMod;
+    private int inteligenciaMod = (int) Math.ceil(inteligencia / 2);
 	
     @NotNull
     @Column(name="atributo_sabedoria_mod")
-    private int sabedoriaMod;
+    private int sabedoriaMod = (int) Math.ceil(sabedoria / 2);
 	
     // @NotNull
     @Column(name="atributo_carisma_mod")
-    private int carismaMod;
+    private int carismaMod = (int) Math.ceil(carisma / 2);
 	
     @NotNull
     @Column(name="atributo_nivel")

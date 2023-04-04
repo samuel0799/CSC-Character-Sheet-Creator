@@ -11,7 +11,10 @@ public class FichaModel {
     private Long id;
     private UsuarioIdNomeModel usuario;
     private String nome;
-    private AtributosModel atributos;
+    private String raca;
+    private String classe;
 
+    private AtributosModel atributos;
+ 
 
 }

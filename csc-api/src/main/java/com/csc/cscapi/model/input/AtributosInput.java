@@ -19,4 +19,12 @@ public class AtributosInput {
 
     @NotNull
     private int inteligencia;
+
+    @NotNull
+    private int sabedoria;
+
+    @NotNull
+    private int carisma;
+
+    
 }

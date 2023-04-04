@@ -26,11 +26,11 @@ public class Ficha {
     @NotBlank
     private String nome;
 
-   // @Enumerated(EnumType.STRING)
+
     @NotBlank
     private String raca;
 
-    //@Enumerated(EnumType.STRING)
+
     @NotBlank
     private String classe;
 
@@ -40,4 +40,5 @@ public class Ficha {
 
     @ManyToOne
     private Usuario usuario;
+
 }
