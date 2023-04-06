@@ -11,5 +11,6 @@ import com.csc.cscapi.entities.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     
     Optional<Usuario> findByEmail(String email);
+    Optional<Usuario> findByEmailAndSenha(String email, String senha);
     
 }

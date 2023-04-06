@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.csc.cscapi.entities.Usuario;
+import com.csc.cscapi.model.input.LoginInput;
 import com.csc.cscapi.model.input.UsuarioInput;
 import com.csc.cscapi.model.output.UsuarioModel;
 import com.csc.cscapi.repositories.UsuarioRepository;
@@ -31,11 +32,19 @@ public class UsuarioController {
 
     private UsuarioRepository usuarioRepository;
     private UsuarioService usuarioService;
+
+
     @PostMapping("/cadastrar")
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario cadastrarUsuario(@Valid @RequestBody Usuario usuario) {
         return usuarioService.salvar(usuario);
     }
+
+    @PostMapping("/login")
+    public Usuario criar(@Valid @RequestBody LoginInput loginInput){
+        return usuarioService.login(loginInput);
+    }
+
 
     @GetMapping
     public List<Usuario> listar() {

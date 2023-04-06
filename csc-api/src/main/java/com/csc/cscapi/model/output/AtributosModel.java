@@ -19,5 +19,9 @@ public class AtributosModel {
     private int inteligenciaMod;
     private int sabedoriaMod;
     private int carismaMod;
+    private int nivel;
+    private int pontosDeExperiencia;
+	private int pontosDeVida;
+	private int classeDeArmadura; 
     
 }

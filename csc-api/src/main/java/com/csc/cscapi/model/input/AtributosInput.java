@@ -26,5 +26,16 @@ public class AtributosInput {
     @NotNull
     private int carisma;
 
+    @NotNull
+    private int nivel;
+
+    @NotNull
+    private int pontosDeExperiencia;
+
+    @NotNull
+	private int pontosDeVida;
+
+    @NotNull
+	private int classeDeArmadura;
     
 }
