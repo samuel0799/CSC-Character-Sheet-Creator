@@ -56,7 +56,7 @@ async function login(event:FormEvent) {
     <div className= "bg-background-login bg-cover bg-center bg-no-repeat h-screen sm:bg-contain md:bg-cover lg:bg-cover xl:bg-cover overflow-y-hidden">
     <div className='flex h-screen justify-center items-center'>
       <div className='bg-black h-screen '>
-      <a className='text-red-700 text-xl' href="/">inicio</a>
+        
       <Image className='mt-8 mx-7' src={logoImg} alt=''/>
       <Image className='my-28 mx-12' src={dadoIcon} alt=''/>
       <button className='bg-black mt-16 mb-2 mx-12 border-white border-4 rounded-full '
