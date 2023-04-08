@@ -14,7 +14,7 @@ function handleOpenModal() {
     setIsModalOpen(false);
   }
     return(
-        <div>
+        <div className="flex mt-96 justify-center items-center">
             <button onClick={handleOpenModal}>Abrir Popup</button>
       {isModalOpen && (
       <FichaModal  
@@ -22,7 +22,8 @@ function handleOpenModal() {
       classe={""} 
       nivel={0} 
       raca={""}  
-      onClose={handleCloseModal}
+      type="Guerreiro"
+      //onClose={handleCloseModal}
       />)}
         </div>
     )

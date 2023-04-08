@@ -10,7 +10,10 @@ module.exports = {
       },
       backgroundImage:{
         'background-login': "url('/login.jpeg')",
-        'background-home': "url('/homepage.jpg')"
+        'background-home': "url('/homepage.jpg')",
+        'background-guerreiro':"url('dadovermelho.png')",
+        'background-ladino': "url('/dadoverde.png')",
+        'background-mago': "url('/dadocinza.png')",
       },
       spacing:{
         '110': '20.625rem',

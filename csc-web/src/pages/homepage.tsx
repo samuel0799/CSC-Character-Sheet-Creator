@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import Image from "next/image";
 
 import ResumoFicha from "@/components/ResumoFicha";
@@ -9,6 +9,7 @@ import { api } from '@/lib/axios'
 import menuIcon from '../assets/icons/menuIcon.svg'
 import logoutIcon from '../assets/icons/logoutIcon.svg'
 import addIcon from '../assets/icons/addIcon.svg'
+import FichaModal from "@/components/FichaModal";
 
 interface Ficha {
   id: number;
@@ -51,7 +52,16 @@ export default function homepage(props: Props) {
   const router = useRouter();
   const { token } = router.query
 
- 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalIndex, setModalIndex] = useState(-1);
+
+  function handleOpenModal(index: number) {
+    setIsModalOpen(true);
+    setModalIndex(index)
+  }
+
+  
+  
 
   useEffect(() => {
     if (token) {
@@ -74,7 +84,8 @@ export default function homepage(props: Props) {
 
 
   return (
-    <div className=" relative bg-background-home bg-fixed bg-center bg-no-repeat ">
+    <div className=" relative bg-background-home w-full h-full bg-fixed bg-center bg-no-repeat "
+   >
 
       <div className="left-0 top-0 absolute bg-black w-1/12 h-full drop-shadow-lg" />
 
@@ -85,17 +96,37 @@ export default function homepage(props: Props) {
         src={logoutIcon} alt="" />
       <div className="h-12" ></div>
       <div className=" grid items-center ml-52 grid-cols-2 gap-x-10 gap-y-16 ">
+     
         {fichas.map((ficha, index) => (
-          <div className="z-30"
+          
+          <div className=""
+            onClick={()=>handleOpenModal(index)}
             key={index}>
-            <ResumoFicha type={ficha.classe} nome={ficha.nome} classe={ficha.classe} nivel={ficha.atributos.nivel} raca={ficha.raca} id={ficha.id}/>
+            <ResumoFicha type={ficha.classe} nome={ficha.nome} classe={ficha.classe} nivel={ficha.atributos.nivel} raca={ficha.raca} />
+            {isModalOpen && modalIndex === index && (
+      <FichaModal  
+      nome={ficha.nome} 
+      classe={ficha.classe} 
+      nivel={ficha.id} 
+      raca={ficha.raca}  
+      type="Guerreiro"
+      // onClose={handleCloseModal}
+      
+      />
+      )}
           </div>
+      
+          
         ))}
         <button className="bg-[url('../assets/icons/addIcon.svg')] bg-no-repeat bg-center w-[529px] h-[230px] backdrop-blur-[8.8px] bg-[rgba(255,255,255,0.32)] rounded-[10px] [box-shadow:0px_0px_0px_1px_rgba(255,_255,_255,_0.01)_inset] [box-shadow-width:1px]">
 
         </button>
         <div className="h-12"></div>
       </div>
+      <div>
+      
+      </div>
+      
     </div>
   )
 }

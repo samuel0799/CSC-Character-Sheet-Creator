@@ -4,12 +4,13 @@ import FichaModal from "./FichaModal";
 
 interface Props {
 
-  id: number,
+  
   nome: string;
   classe: string;
   nivel: number;
   raca: string;
   type?: 'Guerreiro' | 'Mago' | 'Ladino' | MyStringUnion
+
 }
 
 type MyStringUnion = string & {
@@ -36,33 +37,23 @@ export default function ResumoFicha(props: Props) {
       bgColor = 'bg-[gray-500]';
       break;
   }
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
-  function handleOpenModal() {
+  const handleOpenModal = () => {
     setIsModalOpen(true);
-  }
+  };
 
-  function handleCloseModal() {
+  const handleCloseModal = () => {
     setIsModalOpen(false);
-  }
-
+  };
   return (
 
 
     <div
       className={`relative text-white w-[529px] h-[230px] backdrop-blur-[8.8px]`}
-      onClick={handleOpenModal}
+     
     >
-      {isModalOpen && (
-        <FichaModal
-          nome={""}
-          classe={""}
-          nivel={0}
-          raca={""}
-          onClose={handleCloseModal}
-        />)}
+     
       <div className={`inset-0 absolute w-[529px] backdrop-blur-[8.8px] rounded-[10px] [box-shadow:0px_0px_0px_1px_rgba(213,_83,_83,_0.01)_inset] [box-shadow-width:1px] ${bgColor}`} />
       <p className="w-72 absolute text-base font-semibold text-center inline m-0 h-[72px] left-[37.62%] right-[7.94%] top-[47.83%] bottom-[20.87%] leading-[normal]">
         Classe - {props.classe} lv {props.nivel}
@@ -79,6 +70,8 @@ export default function ResumoFicha(props: Props) {
       <p className="w-72 absolute font-bold text-left inline m-0 h-[38px] left-[38.19%] right-[7.37%] top-[26.52%] bottom-[56.96%] text-[32px] leading-[normal]">
         {props.nome}
       </p>
+
+      
     </div>
 
   );
