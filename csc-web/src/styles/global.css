@@ -2,3 +2,7 @@
 @tailwind utilities;
 @tailwind components;
 
+.selected > img {
+          border: 4px solid green;
+        }
+
