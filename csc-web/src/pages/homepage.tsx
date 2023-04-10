@@ -89,7 +89,7 @@ export default function homepage(props: Props) {
         })
     }
 
-  }, [token])
+  }, [token,fichas])
 
 
     async function excluir(id: number){
@@ -98,6 +98,7 @@ export default function homepage(props: Props) {
   
         if(response.status === 200){
           alert("ficha apagada com sucesso")
+          setFichas(fichas.filter(ficha => ficha.id !== id))
         } 
   
       } catch (error) {

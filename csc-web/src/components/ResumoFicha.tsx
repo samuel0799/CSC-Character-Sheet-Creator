@@ -66,11 +66,6 @@ export default function ResumoFicha(props: Props) {
   };
 
   
-
-  function excluirFicha() {
-    alert('clicou');
-  }
-
   return (
 
      

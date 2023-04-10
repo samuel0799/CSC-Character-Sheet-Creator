@@ -56,7 +56,7 @@ export default function NovaFicha(props: Props) {
                 }
             });
 
-            alert("Ficha Criada, atualize a página")
+            alert("Ficha Criada")
 
             setNome("")
             setRaca("")

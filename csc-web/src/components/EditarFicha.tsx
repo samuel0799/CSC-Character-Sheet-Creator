@@ -75,7 +75,8 @@ export default function EditarFicha(props: Props) {
             
             }}).then((res)=>{
               if(res.status === 200){
-             
+              alert("Edição concluída")
+              props.onClose();
               }
             })
             
@@ -286,8 +287,9 @@ export default function EditarFicha(props: Props) {
                                         <button
                                             className="bg-opacity-100 rounded-xl shadow-black shadow-lg p-5 border-yellow-800 border-4 text-yellow-800 font-bold"
                                             type="submit"
-                                            //onClick={props.onClose}
-                                        >FINALIZAR EDIÇÃO</button>
+                                            
+                                            
+                                        >FINALIZAR EDIÇÃO </button>
                                     </div>
                                 </form>
                             </div>
